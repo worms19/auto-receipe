@@ -22,7 +22,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **PROC-01**: App transcribes audio to text using speech-to-text API
 - [ ] **PROC-02**: App structures transcript into recipe format using AI (ingredients list, steps)
-- [ ] **PROC-03**: App displays processing status to user during extraction/transcription
+- [x] **PROC-03**: App displays processing status to user during extraction/transcription
 
 ### Display
 
@@ -100,7 +100,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXTR-03 | Phase 4 | Pending |
 | PROC-01 | Phase 3 | Pending |
 | PROC-02 | Phase 3 | Pending |
-| PROC-03 | Phase 2 | Pending |
+| PROC-03 | Phase 2 | Complete |
 | DISP-01 | Phase 1 | Complete |
 | DISP-02 | Phase 1 | Complete |
 | DISP-03 | Phase 1 | Complete |
@@ -118,4 +118,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-01*
-*Last updated: 2026-02-01 after Phase 1 verification*
+*Last updated: 2026-02-01 after Phase 2 verification*
