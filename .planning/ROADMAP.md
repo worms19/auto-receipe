@@ -30,11 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can save a recipe and it persists after app restart
   4. User can delete a recipe from the collection
   5. Recipes are viewable offline after saving
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md - Project setup, NativeWind config, SQLite database layer
+- [ ] 01-02-PLAN.md - Recipe list/detail UI, delete functionality, mock data
 
 ### Phase 2: Processing Pipeline
 **Goal**: User sees processing status while app extracts recipe (pipeline structure with mock APIs)
@@ -102,7 +102,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & UI Shell | 0/2 | Not started | - |
+| 1. Foundation & UI Shell | 0/2 | Planned | - |
 | 2. Processing Pipeline | 0/1 | Not started | - |
 | 3. API Integrations | 0/2 | Not started | - |
 | 4. Video Extraction | 0/2 | Not started | - |
