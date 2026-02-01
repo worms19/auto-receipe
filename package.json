@@ -12,6 +12,7 @@
     "babel-preset-expo": "^54.0.10",
     "clsx": "^2.1.1",
     "expo": "~54.0.33",
+    "expo-crypto": "~15.0.8",
     "expo-image": "~3.0.11",
     "expo-linking": "~8.0.11",
     "expo-router": "~6.0.23",
