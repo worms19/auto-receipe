@@ -60,11 +60,11 @@ Plans:
   2. Transcript is structured into recipe format (ingredients list, numbered steps) via Claude API
   3. Structured recipe is saved with correct data (not mock data)
   4. Processing handles API errors gracefully with user feedback
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md - API foundation (errors, config) and Whisper transcription service
+- [ ] 03-02-PLAN.md - Claude structuring service and pipeline integration
 
 ### Phase 4: Video Extraction
 **Goal**: App downloads Instagram video, extracts audio, and captures thumbnail
