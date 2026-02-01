@@ -13,7 +13,7 @@ WeChef transforms Instagram cooking videos into structured recipes. This roadmap
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & UI Shell** - Working app skeleton with recipe list/detail, local storage, mock data
-- [ ] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
+- [x] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
 - [ ] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
 - [ ] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture
 - [ ] **Phase 5: Share Extension** - iOS share sheet integration for complete user flow
@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md - Pipeline foundation with Zustand store, mock APIs, URL input, progress indicator
-- [ ] 02-02-PLAN.md - Processing modal integration with home screen, recipe saving
+- [x] 02-01-PLAN.md - Pipeline foundation with Zustand store, mock APIs, URL input, progress indicator
+- [x] 02-02-PLAN.md - Processing modal integration with home screen, recipe saving
 
 ### Phase 3: API Integrations
 **Goal**: App transcribes audio and structures recipes using real APIs (Whisper and Claude)
@@ -104,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & UI Shell | 2/2 | Complete | 2026-02-01 |
-| 2. Processing Pipeline | 0/2 | Not started | - |
+| 2. Processing Pipeline | 2/2 | Complete | 2026-02-01 |
 | 3. API Integrations | 0/2 | Not started | - |
 | 4. Video Extraction | 0/2 | Not started | - |
 | 5. Share Extension | 0/1 | Not started | - |
