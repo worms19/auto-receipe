@@ -8,6 +8,13 @@ export default function RootLayout() {
     <SQLiteProvider databaseName="wechef.db" onInit={initDatabase}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="recipe/[id]"
+          options={{
+            headerShown: true,
+            presentation: 'card',
+          }}
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
     </SQLiteProvider>
