@@ -45,10 +45,11 @@ Plans:
   2. User sees real-time progress indicator during processing (downloading, extracting, transcribing, structuring)
   3. User is notified when processing completes or fails
   4. Mock recipe is saved to collection after processing completes
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md - Pipeline foundation with Zustand store, mock APIs, URL input, progress indicator
+- [ ] 02-02-PLAN.md - Processing modal integration with home screen, recipe saving
 
 ### Phase 3: API Integrations
 **Goal**: App transcribes audio and structures recipes using real APIs (Whisper and Claude)
@@ -103,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & UI Shell | 2/2 | Complete | 2026-02-01 |
-| 2. Processing Pipeline | 0/1 | Not started | - |
+| 2. Processing Pipeline | 0/2 | Not started | - |
 | 3. API Integrations | 0/2 | Not started | - |
 | 4. Video Extraction | 0/2 | Not started | - |
 | 5. Share Extension | 0/1 | Not started | - |
