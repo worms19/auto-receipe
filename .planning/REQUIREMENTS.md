@@ -93,29 +93,29 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INPUT-01 | TBD | Pending |
-| INPUT-02 | TBD | Pending |
-| EXTR-01 | TBD | Pending |
-| EXTR-02 | TBD | Pending |
-| EXTR-03 | TBD | Pending |
-| PROC-01 | TBD | Pending |
-| PROC-02 | TBD | Pending |
-| PROC-03 | TBD | Pending |
-| DISP-01 | TBD | Pending |
-| DISP-02 | TBD | Pending |
-| DISP-03 | TBD | Pending |
-| STOR-01 | TBD | Pending |
-| STOR-02 | TBD | Pending |
-| STOR-03 | TBD | Pending |
-| STOR-04 | TBD | Pending |
-| COLL-01 | TBD | Pending |
-| COLL-02 | TBD | Pending |
+| INPUT-01 | Phase 5 | Pending |
+| INPUT-02 | Phase 5 | Pending |
+| EXTR-01 | Phase 4 | Pending |
+| EXTR-02 | Phase 4 | Pending |
+| EXTR-03 | Phase 4 | Pending |
+| PROC-01 | Phase 3 | Pending |
+| PROC-02 | Phase 3 | Pending |
+| PROC-03 | Phase 2 | Pending |
+| DISP-01 | Phase 1 | Pending |
+| DISP-02 | Phase 1 | Pending |
+| DISP-03 | Phase 1 | Pending |
+| STOR-01 | Phase 1 | Pending |
+| STOR-02 | Phase 1 | Pending |
+| STOR-03 | Phase 1 | Pending |
+| STOR-04 | Phase 1 | Pending |
+| COLL-01 | Phase 1 | Pending |
+| COLL-02 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-01*
-*Last updated: 2026-02-01 after initial definition*
+*Last updated: 2026-02-01 after roadmap creation*
