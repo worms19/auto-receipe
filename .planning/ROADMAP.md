@@ -12,7 +12,7 @@ WeChef transforms Instagram cooking videos into structured recipes. This roadmap
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & UI Shell** - Working app skeleton with recipe list/detail, local storage, mock data
+- [x] **Phase 1: Foundation & UI Shell** - Working app skeleton with recipe list/detail, local storage, mock data
 - [ ] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
 - [ ] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
 - [ ] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture
@@ -33,8 +33,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md - Project setup, NativeWind config, SQLite database layer
-- [ ] 01-02-PLAN.md - Recipe list/detail UI, delete functionality, mock data
+- [x] 01-01-PLAN.md - Project setup, NativeWind config, SQLite database layer
+- [x] 01-02-PLAN.md - Recipe list/detail UI, delete functionality, mock data
 
 ### Phase 2: Processing Pipeline
 **Goal**: User sees processing status while app extracts recipe (pipeline structure with mock APIs)
@@ -102,7 +102,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & UI Shell | 0/2 | Planned | - |
+| 1. Foundation & UI Shell | 2/2 | Complete | 2026-02-01 |
 | 2. Processing Pipeline | 0/1 | Not started | - |
 | 3. API Integrations | 0/2 | Not started | - |
 | 4. Video Extraction | 0/2 | Not started | - |

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm view:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx get-shit-done-cc --global)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.expo.dev)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:www.nativewind.dev)",
+      "Bash(git -C /Users/damienanselmi/dev/wechef check-ignore:*)",
+      "Bash(npm install:*)",
+      "Bash(npx expo install:*)",
+      "Bash(cat:*)",
+      "Bash(test:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}

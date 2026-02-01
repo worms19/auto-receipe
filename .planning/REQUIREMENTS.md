@@ -26,21 +26,21 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Display
 
-- [ ] **DISP-01**: User can view structured recipe with ingredients list and numbered steps
-- [ ] **DISP-02**: User can see recipe thumbnail/photo
-- [ ] **DISP-03**: User can tap to open original Instagram URL
+- [x] **DISP-01**: User can view structured recipe with ingredients list and numbered steps
+- [x] **DISP-02**: User can see recipe thumbnail/photo
+- [x] **DISP-03**: User can tap to open original Instagram URL
 
 ### Storage
 
-- [ ] **STOR-01**: User can save recipe to local collection
-- [ ] **STOR-02**: Saved recipes persist across app restarts
-- [ ] **STOR-03**: User can delete recipe from collection
-- [ ] **STOR-04**: Recipes are available offline after saving
+- [x] **STOR-01**: User can save recipe to local collection
+- [x] **STOR-02**: Saved recipes persist across app restarts
+- [x] **STOR-03**: User can delete recipe from collection
+- [x] **STOR-04**: Recipes are available offline after saving
 
 ### Collection
 
-- [ ] **COLL-01**: User can browse all saved recipes in scrollable list
-- [ ] **COLL-02**: Recipe list shows title and thumbnail for each recipe
+- [x] **COLL-01**: User can browse all saved recipes in scrollable list
+- [x] **COLL-02**: Recipe list shows title and thumbnail for each recipe
 
 ## v2 Requirements
 
@@ -101,15 +101,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PROC-01 | Phase 3 | Pending |
 | PROC-02 | Phase 3 | Pending |
 | PROC-03 | Phase 2 | Pending |
-| DISP-01 | Phase 1 | Pending |
-| DISP-02 | Phase 1 | Pending |
-| DISP-03 | Phase 1 | Pending |
-| STOR-01 | Phase 1 | Pending |
-| STOR-02 | Phase 1 | Pending |
-| STOR-03 | Phase 1 | Pending |
-| STOR-04 | Phase 1 | Pending |
-| COLL-01 | Phase 1 | Pending |
-| COLL-02 | Phase 1 | Pending |
+| DISP-01 | Phase 1 | Complete |
+| DISP-02 | Phase 1 | Complete |
+| DISP-03 | Phase 1 | Complete |
+| STOR-01 | Phase 1 | Complete |
+| STOR-02 | Phase 1 | Complete |
+| STOR-03 | Phase 1 | Complete |
+| STOR-04 | Phase 1 | Complete |
+| COLL-01 | Phase 1 | Complete |
+| COLL-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 17 total
@@ -118,4 +118,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-01*
-*Last updated: 2026-02-01 after roadmap creation*
+*Last updated: 2026-02-01 after Phase 1 verification*
