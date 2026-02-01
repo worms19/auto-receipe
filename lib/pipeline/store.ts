@@ -1,11 +1,9 @@
 import { create } from 'zustand';
 import { PipelineState, PipelineStage } from './types';
-import {
-  mockDownload,
-  mockExtract,
-  mockTranscribe,
-  mockStructure,
-} from './mock-api';
+import { mockDownload, mockExtract } from './mock-api';
+import { transcribeAudio } from '@/lib/api/whisper';
+import { structureRecipe } from '@/lib/api/claude';
+import { getOpenAIKey, getAnthropicKey } from '@/lib/api/config';
 import { NewRecipe } from '@/lib/types';
 
 interface PipelineStore extends PipelineState {
@@ -33,15 +31,18 @@ export const usePipelineStore = create<PipelineStore>((set) => ({
       set({ stage: 'extracting', progress: 0.25 });
 
       // Stage 2: Extracting (~1.5s)
-      await mockExtract();
+      // TODO: Phase 4 will provide real audioUri from video extraction
+      const audioUri = await mockExtract();
       set({ stage: 'transcribing', progress: 0.5 });
 
-      // Stage 3: Transcribing (~2s)
-      const transcript = await mockTranscribe();
+      // Stage 3: Transcribing - NOW REAL
+      const openaiKey = await getOpenAIKey();
+      const transcript = await transcribeAudio(audioUri, openaiKey);
       set({ stage: 'structuring', progress: 0.75 });
 
-      // Stage 4: Structuring (~1.5s)
-      const recipe = await mockStructure(transcript);
+      // Stage 4: Structuring - NOW REAL
+      const anthropicKey = await getAnthropicKey();
+      const recipe = await structureRecipe(transcript, anthropicKey);
       set({ stage: 'complete', progress: 1 });
 
       // Set sourceUrl on the recipe
