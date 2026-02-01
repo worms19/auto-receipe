@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-02-01)
 
 **Core value:** Turn messy spoken recipe videos into structured, readable recipes you can actually cook from.
-**Current focus:** Phase 2 - Processing Pipeline
+**Current focus:** Phase 3 - API Integrations
 
 ## Current Position
 
-Phase: 2 of 5 (Processing Pipeline)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-01 - Completed 02-02-PLAN.md
+Phase: 3 of 5 (API Integrations)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-01 - Completed 03-01-PLAN.md
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 57%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: ~7 min
+- Total plans completed: 4
+- Average duration: ~6 min
 - Total execution time: ~0.5 hours
 
 **By Phase:**
@@ -29,9 +29,10 @@ Progress: [█████░░░░░] 50%
 |-------|-------|-------|----------|--------|
 | 01-foundation-ui-shell | 2 | ~20 min | ~10 min | Complete |
 | 02-processing-pipeline | 2 | ~10 min | ~5 min | Complete |
+| 03-api-integrations | 1 | ~3 min | ~3 min | In Progress |
 
 **Recent Trend:**
-- Last 5 plans: ~7 min avg
+- Last 5 plans: ~6 min avg
 - Trend: improving
 
 *Updated after each plan completion*
@@ -51,6 +52,8 @@ Recent decisions affecting current work:
 - Stage-level progress mapping (0.25, 0.5, 0.75, 0.9, 1) instead of sub-stage progress
 - Downgraded react-native-worklets to 0.5.1 for Expo 54 compatibility
 - Modal blocks dismissal during processing, auto-saves recipe on completion
+- Used expo-file-system/legacy for uploadAsync (v19 deprecated legacy methods)
+- Retryable errors indicated via boolean flag on error class
 
 ### Pending Todos
 
@@ -62,6 +65,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-01T14:45:00Z
-Stopped at: Completed 02-02-PLAN.md (Phase 2 complete)
+Last session: 2026-02-01T17:18:35Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
