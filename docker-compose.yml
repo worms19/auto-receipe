@@ -9,7 +9,8 @@ services:
   whisper:
     image: fedirz/faster-whisper-server:latest-cpu
     environment:
-      - WHISPER__MODEL=Systran/faster-whisper-large-v3-turbo
+      - WHISPER__MODEL=deepdml/faster-whisper-large-v3-turbo-ct2
+      - HF_HUB_OFFLINE=0
     volumes:
       - whisper-models:/root/.cache/huggingface
     healthcheck:
