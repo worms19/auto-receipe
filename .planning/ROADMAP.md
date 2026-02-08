@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation & UI Shell** - Working app skeleton with recipe list/detail, local storage, mock data
 - [x] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
 - [x] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
-- [ ] **Phase 3.1: Local Whisper Server** - Local whisper.cpp server to replace OpenAI API (INSERTED)
+- [x] **Phase 3.1: Local Whisper Server** - Local whisper.cpp server to replace OpenAI API (INSERTED)
 - [ ] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture
 - [ ] **Phase 5: Share Extension** - iOS share sheet integration for complete user flow
 
@@ -79,7 +79,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 03.1-01-PLAN.md -- App code changes, startup script, and end-to-end verification
+- [x] 03.1-01-PLAN.md -- App code changes, startup script, and end-to-end verification
 
 ### Phase 4: Video Extraction
 **Goal**: App downloads Instagram video, extracts audio, and captures thumbnail
@@ -121,7 +121,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 3.1 -> 4 -> 5
 | 1. Foundation & UI Shell | 2/2 | Complete | 2026-02-01 |
 | 2. Processing Pipeline | 2/2 | Complete | 2026-02-01 |
 | 3. API Integrations | 2/2 | Complete | 2026-02-01 |
-| 3.1. Local Whisper Server | 0/1 | Not started | - |
+| 3.1. Local Whisper Server | 1/1 | Complete | 2026-02-08 |
 | 4. Video Extraction | 0/2 | Not started | - |
 | 5. Share Extension | 0/1 | Not started | - |
 

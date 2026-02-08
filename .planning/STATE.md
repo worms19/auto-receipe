@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-02-01)
 
 **Core value:** Turn messy spoken recipe videos into structured, readable recipes you can actually cook from.
-**Current focus:** Phase 3.1 - Local Whisper Server
+**Current focus:** Phase 4 - Video Extraction
 
 ## Current Position
 
-Phase: 3.1 of 5 (Local Whisper Server)
-Plan: 1 of 1 in current phase
-Status: Paused at checkpoint (Task 3: human-verify)
-Last activity: 2026-02-08 - Tasks 1-2 complete, awaiting checkpoint verification
-Progress: [████████░░] 80%
+Phase: 4 of 5 (Video Extraction)
+Plan: 0 of 2 in current phase
+Status: Not started
+Last activity: 2026-02-08 - Completed Phase 3.1 (Local Whisper Server)
+Progress: [████████░░] 85%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5 (+ 1 in progress)
-- Average duration: ~6 min
+- Total plans completed: 6
+- Average duration: ~5 min
 - Total execution time: ~0.5 hours
 
 **By Phase:**
@@ -29,10 +29,11 @@ Progress: [████████░░] 80%
 | 01-foundation-ui-shell | 2 | ~20 min | ~10 min | Complete |
 | 02-processing-pipeline | 2 | ~10 min | ~5 min | Complete |
 | 03-api-integrations | 2 | ~8 min | ~4 min | Complete |
-| 03.1-local-whisper-server | 1 | ~2 min | ~2 min | In Progress (checkpoint) |
+| 03.1-local-whisper-server | 1 | ~2 min | ~2 min | Complete |
+| 04-video-extraction | 0 | - | - | Not started |
 
 **Recent Trend:**
-- Last 5 plans: ~6 min avg
+- Last 6 plans: ~5 min avg
 - Trend: improving
 
 *Updated after each plan completion*
@@ -62,7 +63,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Complete Task 3 checkpoint verification (local whisper server end-to-end test)
+None.
 
 ### Blockers/Concerns
 
@@ -71,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-08
-Stopped at: Phase 3.1 Plan 1, Task 3 checkpoint (human-verify)
-Resume file: .planning/phases/03.1-local-whisper-server/03.1-01-PLAN.md
+Stopped at: Completed Phase 3.1, ready for Phase 4
+Resume file: None
