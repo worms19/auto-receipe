@@ -94,7 +94,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Dev client transition, native audio module, extraction services, Cobalt setup
+- [x] 04-01-PLAN.md -- Dev client transition, native audio module, extraction services, Cobalt setup
 - [ ] 04-02-PLAN.md -- Pipeline integration with real extraction, end-to-end verification
 
 ### Phase 5: Share Extension
@@ -122,7 +122,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 3.1 -> 4 -> 5
 | 2. Processing Pipeline | 2/2 | Complete | 2026-02-01 |
 | 3. API Integrations | 2/2 | Complete | 2026-02-01 |
 | 3.1. Local Whisper Server | 1/1 | Complete | 2026-02-08 |
-| 4. Video Extraction | 0/2 | Not started | - |
+| 4. Video Extraction | 1/2 | In progress | - |
 | 5. Share Extension | 0/1 | Not started | - |
 
 ---
