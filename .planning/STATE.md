@@ -10,16 +10,15 @@ See: .planning/PROJECT.md (updated 2026-02-01)
 ## Current Position
 
 Phase: 3.1 of 5 (Local Whisper Server)
-Plan: 0 of 1 in current phase
-Status: Not started
-Last activity: 2026-02-08 - Inserted Phase 3.1
-
-Progress: [███████░░░] 71%
+Plan: 1 of 1 in current phase
+Status: Paused at checkpoint (Task 3: human-verify)
+Last activity: 2026-02-08 - Tasks 1-2 complete, awaiting checkpoint verification
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 5 (+ 1 in progress)
 - Average duration: ~6 min
 - Total execution time: ~0.5 hours
 
@@ -30,6 +29,7 @@ Progress: [███████░░░] 71%
 | 01-foundation-ui-shell | 2 | ~20 min | ~10 min | Complete |
 | 02-processing-pipeline | 2 | ~10 min | ~5 min | Complete |
 | 03-api-integrations | 2 | ~8 min | ~4 min | Complete |
+| 03.1-local-whisper-server | 1 | ~2 min | ~2 min | In Progress (checkpoint) |
 
 **Recent Trend:**
 - Last 5 plans: ~6 min avg
@@ -57,10 +57,12 @@ Recent decisions affecting current work:
 - Used tool_choice pattern for Claude structured output (SDK compatibility)
 - Used z.toJSONSchema() from Zod v4 instead of zod-to-json-schema package
 - Local whisper.cpp server instead of OpenAI Whisper API to avoid fees
+- __DEV__ global for endpoint switching (React Native built-in)
+- isLocalWhisper derived from endpoint URL prefix, not __DEV__ directly
 
 ### Pending Todos
 
-None.
+- Complete Task 3 checkpoint verification (local whisper server end-to-end test)
 
 ### Blockers/Concerns
 
@@ -69,5 +71,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-08
-Stopped at: Inserted Phase 3.1 (Local Whisper Server)
-Resume file: None
+Stopped at: Phase 3.1 Plan 1, Task 3 checkpoint (human-verify)
+Resume file: .planning/phases/03.1-local-whisper-server/03.1-01-PLAN.md
