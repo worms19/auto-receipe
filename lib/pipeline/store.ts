@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { PipelineState, PipelineStage } from './types';
 import { mockDownload, mockExtract } from './mock-api';
-import { transcribeAudio } from '@/lib/api/whisper';
+import { transcribeAudio, isLocalWhisper } from '@/lib/api/whisper';
 import { structureRecipe } from '@/lib/api/claude';
 import { getOpenAIKey, getAnthropicKey } from '@/lib/api/config';
 import { NewRecipe } from '@/lib/types';
@@ -35,9 +35,15 @@ export const usePipelineStore = create<PipelineStore>((set) => ({
       const audioUri = await mockExtract();
       set({ stage: 'transcribing', progress: 0.5 });
 
-      // Stage 3: Transcribing - NOW REAL
-      const openaiKey = await getOpenAIKey();
-      const transcript = await transcribeAudio(audioUri, openaiKey);
+      // Stage 3: Transcribing - local whisper-server in dev, OpenAI in prod
+      let transcript: string;
+      if (isLocalWhisper) {
+        // Local whisper-server: no API key needed
+        transcript = await transcribeAudio(audioUri);
+      } else {
+        const openaiKey = await getOpenAIKey();
+        transcript = await transcribeAudio(audioUri, openaiKey);
+      }
       set({ stage: 'structuring', progress: 0.75 });
 
       // Stage 4: Structuring - NOW REAL
