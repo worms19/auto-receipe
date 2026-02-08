@@ -1,21 +1,23 @@
 /**
  * Client for the local NestJS extraction server.
- * Sends an Instagram URL and receives transcript + thumbnail.
+ * Sends an Instagram URL and receives a structured recipe + thumbnail.
  */
 
 const EXTRACTION_URL = 'http://127.0.0.1:3000/extract';
 
-interface ExtractionResponse {
-  transcript: string;
+export interface ExtractionResponse {
+  title: string;
+  ingredients: string[];
+  steps: string[];
   thumbnail: string; // base64 data URI
 }
 
 /**
  * Calls the local extraction server to process a video URL.
- * The server handles: Cobalt resolve -> download -> ffmpeg -> whisper.
+ * The server handles: Cobalt -> download -> ffmpeg -> whisper -> Claude.
  *
  * @param url - Instagram reel/post URL
- * @returns transcript text and base64 thumbnail data URI
+ * @returns Structured recipe with title, ingredients, steps, and base64 thumbnail
  */
 export async function extractViaServer(url: string): Promise<ExtractionResponse> {
   const response = await fetch(EXTRACTION_URL, {

@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "servers": "./scripts/cobalt-server.sh && WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,extract -c blue,green ./scripts/whisper-server.sh ./scripts/extraction-server.sh",
+    "servers": "./scripts/cobalt-server.sh && WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,ollama,extract -c blue,magenta,green ./scripts/whisper-server.sh 'ollama serve' ./scripts/extraction-server.sh",
     "servers:stop": "./scripts/cobalt-server.sh stop"
   },
   "dependencies": {

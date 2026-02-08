@@ -1,4 +1,6 @@
 export class ExtractResponseDto {
-  transcript!: string;
+  title!: string;
+  ingredients!: string[];
+  steps!: string[];
   thumbnail!: string;
 }

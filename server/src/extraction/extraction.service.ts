@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { CobaltService } from './cobalt.service';
 import { MediaService } from './media.service';
 import { WhisperService } from './whisper.service';
+import { ClaudeService } from './claude.service';
 import { ExtractResponseDto } from './dto/extract-response.dto';
 
 @Injectable()
@@ -12,6 +13,7 @@ export class ExtractionService {
     private readonly cobalt: CobaltService,
     private readonly media: MediaService,
     private readonly whisper: WhisperService,
+    private readonly claude: ClaudeService,
   ) {}
 
   async extract(url: string, language?: string): Promise<ExtractResponseDto> {
@@ -36,13 +38,16 @@ export class ExtractionService {
       ]);
 
       // 4. Transcribe audio
-      const transcript = await this.whisper.transcribe(audioPath, language);
+      const transcript = await this.whisper.transcribe(audioPath, language ?? 'fr');
 
-      // 5. Read thumbnail as base64
+      // 5. Structure recipe with Claude
+      const recipe = await this.claude.structureRecipe(transcript);
+
+      // 6. Read thumbnail as base64
       const thumbnail = this.media.toBase64DataUri(thumbPath, 'image/jpeg');
 
       this.logger.log('Extraction complete');
-      return { transcript, thumbnail };
+      return { ...recipe, thumbnail };
     } finally {
       // Cleanup temp files
       this.media.cleanup(videoPath);
