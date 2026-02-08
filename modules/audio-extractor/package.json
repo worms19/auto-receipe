@@ -1,0 +1,9 @@
+{
+  "name": "audio-extractor",
+  "version": "1.0.0",
+  "description": "Native iOS audio extraction module using AVFoundation",
+  "main": "src/index.ts",
+  "author": "WeChef",
+  "license": "MIT",
+  "homepage": "https://github.com/wechef"
+}
