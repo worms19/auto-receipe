@@ -16,7 +16,7 @@ export interface PipelineState {
 
 export const STAGE_LABELS: Record<PipelineStage, string> = {
   idle: 'Ready',
-  downloading: 'Downloading video...',
+  downloading: 'Processing video...',
   extracting: 'Extracting content...',
   transcribing: 'Transcribing audio...',
   structuring: 'Creating recipe...',

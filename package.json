@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "servers": "./scripts/cobalt-server.sh && WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,extract -c blue,green ./scripts/whisper-server.sh ./scripts/extraction-server.sh",
+    "servers:stop": "./scripts/cobalt-server.sh stop"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+    "concurrently": "^9.2.1",
     "typescript": "~5.9.2"
   },
   "private": true
