@@ -91,11 +91,11 @@ Plans:
   3. Thumbnail image is captured from video
   4. Temporary video file is deleted after processing (never persisted)
   5. Extraction handles Instagram URL variations and failures gracefully
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md -- Dev client transition, native audio module, extraction services, Cobalt setup
+- [ ] 04-02-PLAN.md -- Pipeline integration with real extraction, end-to-end verification
 
 ### Phase 5: Share Extension
 **Goal**: User can share Instagram URL directly from iOS to app and receive structured recipe
