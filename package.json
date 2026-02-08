@@ -7,8 +7,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "servers": "./scripts/cobalt-server.sh && WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,ollama,extract -c blue,magenta,green ./scripts/whisper-server.sh 'ollama serve' ./scripts/extraction-server.sh",
-    "servers:stop": "./scripts/cobalt-server.sh stop",
+    "servers": "WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,ollama -c blue,magenta ./scripts/whisper-server.sh 'ollama serve'",
     "servers:docker": "docker compose up -d && docker compose logs -f extraction",
     "servers:docker:stop": "docker compose down",
     "postinstall": "patch-package"
