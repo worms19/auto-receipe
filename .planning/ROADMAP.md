@@ -70,16 +70,16 @@ Plans:
 ### Phase 3.1: Local Whisper Server (INSERTED)
 **Goal**: Local whisper.cpp transcription server replaces OpenAI Whisper API, eliminating API fees
 **Depends on**: Phase 3
-**Requirements**: PROC-01 (transcription — local implementation)
+**Requirements**: PROC-01 (transcription -- local implementation)
 **Success Criteria** (what must be TRUE):
   1. whisper.cpp server runs locally and accepts audio files via OpenAI-compatible `/v1/audio/transcriptions` endpoint
   2. App's whisper.ts points to local server instead of api.openai.com
   3. Audio file is transcribed to text via local Whisper model
   4. Transcription quality is acceptable for recipe content
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 03.1-01: TBD
+- [ ] 03.1-01-PLAN.md -- App code changes, startup script, and end-to-end verification
 
 ### Phase 4: Video Extraction
 **Goal**: App downloads Instagram video, extracts audio, and captures thumbnail
