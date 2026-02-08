@@ -1,0 +1,72 @@
+services:
+  cobalt:
+    image: ghcr.io/imputnet/cobalt:10
+    environment:
+      - API_URL=http://cobalt:9000/
+    networks:
+      - wechef
+
+  whisper:
+    image: fedirz/faster-whisper-server:latest-cpu
+    environment:
+      - WHISPER__MODEL=Systran/faster-whisper-large-v3-turbo
+    volumes:
+      - whisper-models:/root/.cache/huggingface
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    networks:
+      - wechef
+
+  ollama:
+    image: ollama/ollama
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    networks:
+      - wechef
+
+  ollama-init:
+    image: ollama/ollama
+    entrypoint: ["ollama", "pull", "mistral"]
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+    networks:
+      - wechef
+
+  extraction:
+    build:
+      context: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      - COBALT_URL=http://cobalt:9000/
+      - WHISPER_URL=http://whisper:8000/v1/audio/transcriptions
+      - OLLAMA_URL=http://ollama:11434/api/chat
+    depends_on:
+      whisper:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    networks:
+      - wechef
+
+networks:
+  wechef:
+    driver: bridge
+
+volumes:
+  whisper-models:
+  ollama-data:

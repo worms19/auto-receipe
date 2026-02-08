@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { z } from 'zod';
 
-const OLLAMA_URL = 'http://127.0.0.1:11434/api/chat';
+const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434/api/chat';
 
 const RecipeSchema = z.object({
   title: z.string(),

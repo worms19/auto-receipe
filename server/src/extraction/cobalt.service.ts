@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 
-const COBALT_URL = 'http://127.0.0.1:9000/';
+const COBALT_URL = process.env.COBALT_URL || 'http://127.0.0.1:9000/';
 
 interface CobaltResponse {
   status: 'tunnel' | 'redirect' | 'picker' | 'error';

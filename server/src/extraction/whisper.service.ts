@@ -4,7 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import FormData = require('form-data');
 import * as fs from 'fs';
 
-const WHISPER_URL = 'http://127.0.0.1:8080/v1/audio/transcriptions';
+const WHISPER_URL = process.env.WHISPER_URL || 'http://127.0.0.1:8080/v1/audio/transcriptions';
 
 @Injectable()
 export class WhisperService {
