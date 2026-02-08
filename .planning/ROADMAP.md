@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
 - [x] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
 - [x] **Phase 3.1: Local Whisper Server** - Local whisper.cpp server to replace OpenAI API (INSERTED)
-- [ ] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture
+- [x] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture (server-side NestJS)
 - [ ] **Phase 5: Share Extension** - iOS share sheet integration for complete user flow
 
 ## Phase Details
@@ -91,11 +91,13 @@ Plans:
   3. Thumbnail image is captured from video
   4. Temporary video file is deleted after processing (never persisted)
   5. Extraction handles Instagram URL variations and failures gracefully
-**Plans**: 2 plans
+**Plans**: 2 plans (original client-side plans superseded by server-side approach)
+
+**Architecture note:** Original plans described client-side extraction (native Expo module + Cobalt from app). These were implemented then reverted in favor of a **NestJS server** that handles the full pipeline: Cobalt → ffmpeg → Whisper → Ollama/Mistral. The app calls `POST /extract` and receives a structured recipe + base64 thumbnail.
 
 Plans:
-- [ ] 04-01-PLAN.md -- Dev client transition, native audio module, extraction services, Cobalt setup
-- [ ] 04-02-PLAN.md -- Pipeline integration with real extraction, end-to-end verification
+- [x] 04-01-PLAN.md -- ~~Dev client transition, native audio module, extraction services, Cobalt setup~~ (SUPERSEDED: server-side NestJS extraction server)
+- [x] 04-02-PLAN.md -- ~~Pipeline integration with real extraction, end-to-end verification~~ (SUPERSEDED: server pipeline integration + Ollama structuring)
 
 ### Phase 5: Share Extension
 **Goal**: User can share Instagram URL directly from iOS to app and receive structured recipe
@@ -106,10 +108,10 @@ Plans:
   2. Shared URL is validated as Instagram video link
   3. App opens and begins processing automatically after share
   4. Complete flow works: share from Instagram -> processing -> recipe saved to collection
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md -- Install expo-share-intent, configure share extension, integrate into home screen, rebuild and verify
 
 ## Progress
 
@@ -122,7 +124,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 3.1 -> 4 -> 5
 | 2. Processing Pipeline | 2/2 | Complete | 2026-02-01 |
 | 3. API Integrations | 2/2 | Complete | 2026-02-01 |
 | 3.1. Local Whisper Server | 1/1 | Complete | 2026-02-08 |
-| 4. Video Extraction | 0/2 | Not started | - |
+| 4. Video Extraction | 2/2 | Complete | 2026-02-08 |
 | 5. Share Extension | 0/1 | Not started | - |
 
 ---
