@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { View, FlatList, RefreshControl } from 'react-native';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useFocusEffect } from 'expo-router';
@@ -10,6 +10,8 @@ import { EmptyState } from '@/components/EmptyState';
 import { URLInput } from '@/components/URLInput';
 import { ProcessingModal } from '@/components/ProcessingModal';
 import { usePipelineStore } from '@/lib/pipeline/store';
+import { useShareIntent } from 'expo-share-intent';
+import { isInstagramUrl, extractInstagramUrl } from '@/lib/validation';
 
 export default function RecipeList() {
   const db = useSQLiteContext();
@@ -19,6 +21,23 @@ export default function RecipeList() {
 
   const { stage, startProcessing, reset } = usePipelineStore();
   const isProcessing = !['idle', 'complete', 'error'].includes(stage);
+
+  const { hasShareIntent, shareIntent, resetShareIntent } = useShareIntent({
+    resetOnBackground: true,
+  });
+
+  useEffect(() => {
+    if (hasShareIntent && shareIntent) {
+      const url = shareIntent.webUrl || shareIntent.text;
+      if (url) {
+        const instagramUrl = extractInstagramUrl(url);
+        if (instagramUrl && isInstagramUrl(instagramUrl)) {
+          handleProcess(instagramUrl);
+        }
+      }
+      resetShareIntent();
+    }
+  }, [hasShareIntent, shareIntent]);
 
   const loadRecipes = useCallback(async () => {
     // Seed mock data on first run
