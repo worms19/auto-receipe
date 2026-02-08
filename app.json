@@ -15,7 +15,12 @@
     "scheme": "wechef",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.wechef.app"
+      "bundleIdentifier": "com.wechef.app",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
