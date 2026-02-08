@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "servers": "./scripts/cobalt-server.sh && WHISPER_MODEL=~/whisper.cpp/models/ggml-large-v3-turbo.bin concurrently -n whisper,ollama,extract -c blue,magenta,green ./scripts/whisper-server.sh 'ollama serve' ./scripts/extraction-server.sh",
-    "servers:stop": "./scripts/cobalt-server.sh stop"
+    "servers:stop": "./scripts/cobalt-server.sh stop",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",
@@ -22,6 +23,7 @@
     "expo-linking": "~8.0.11",
     "expo-router": "~6.0.23",
     "expo-secure-store": "~15.0.8",
+    "expo-share-intent": "^5.1.1",
     "expo-sqlite": "~16.0.10",
     "expo-status-bar": "~3.0.9",
     "nativewind": "^4.1.23",
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@types/react": "~19.1.0",
     "concurrently": "^9.2.1",
+    "patch-package": "^8.0.1",
     "typescript": "~5.9.2"
   },
   "private": true
