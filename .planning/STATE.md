@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-01)
 
 **Core value:** Turn messy spoken recipe videos into structured, readable recipes you can actually cook from.
-**Current focus:** Phase 3 - API Integrations
+**Current focus:** Phase 3.1 - Local Whisper Server
 
 ## Current Position
 
-Phase: 3 of 5 (API Integrations)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-01 - Completed 03-02-PLAN.md
+Phase: 3.1 of 5 (Local Whisper Server)
+Plan: 0 of 1 in current phase
+Status: Not started
+Last activity: 2026-02-08 - Inserted Phase 3.1
 
 Progress: [███████░░░] 71%
 
@@ -56,6 +56,7 @@ Recent decisions affecting current work:
 - Retryable errors indicated via boolean flag on error class
 - Used tool_choice pattern for Claude structured output (SDK compatibility)
 - Used z.toJSONSchema() from Zod v4 instead of zod-to-json-schema package
+- Local whisper.cpp server instead of OpenAI Whisper API to avoid fees
 
 ### Pending Todos
 
@@ -67,6 +68,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-01T17:30:00Z
-Stopped at: Completed 03-02-PLAN.md (Phase 3 complete)
+Last session: 2026-02-08
+Stopped at: Inserted Phase 3.1 (Local Whisper Server)
 Resume file: None

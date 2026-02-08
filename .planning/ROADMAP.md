@@ -14,7 +14,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & UI Shell** - Working app skeleton with recipe list/detail, local storage, mock data
 - [x] **Phase 2: Processing Pipeline** - Pipeline orchestration with progress UI, mocked API calls
-- [ ] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
+- [x] **Phase 3: API Integrations** - Real transcription (Whisper) and recipe structuring (Claude)
+- [ ] **Phase 3.1: Local Whisper Server** - Local whisper.cpp server to replace OpenAI API (INSERTED)
 - [ ] **Phase 4: Video Extraction** - Instagram download, audio extraction, thumbnail capture
 - [ ] **Phase 5: Share Extension** - iOS share sheet integration for complete user flow
 
@@ -66,6 +67,20 @@ Plans:
 - [ ] 03-01-PLAN.md - API foundation (errors, config) and Whisper transcription service
 - [ ] 03-02-PLAN.md - Claude structuring service and pipeline integration
 
+### Phase 3.1: Local Whisper Server (INSERTED)
+**Goal**: Local whisper.cpp transcription server replaces OpenAI Whisper API, eliminating API fees
+**Depends on**: Phase 3
+**Requirements**: PROC-01 (transcription — local implementation)
+**Success Criteria** (what must be TRUE):
+  1. whisper.cpp server runs locally and accepts audio files via OpenAI-compatible `/v1/audio/transcriptions` endpoint
+  2. App's whisper.ts points to local server instead of api.openai.com
+  3. Audio file is transcribed to text via local Whisper model
+  4. Transcription quality is acceptable for recipe content
+**Plans**: TBD
+
+Plans:
+- [ ] 03.1-01: TBD
+
 ### Phase 4: Video Extraction
 **Goal**: App downloads Instagram video, extracts audio, and captures thumbnail
 **Depends on**: Phase 3
@@ -99,13 +114,14 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 3.1 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & UI Shell | 2/2 | Complete | 2026-02-01 |
 | 2. Processing Pipeline | 2/2 | Complete | 2026-02-01 |
-| 3. API Integrations | 0/2 | Not started | - |
+| 3. API Integrations | 2/2 | Complete | 2026-02-01 |
+| 3.1. Local Whisper Server | 0/1 | Not started | - |
 | 4. Video Extraction | 0/2 | Not started | - |
 | 5. Share Extension | 0/1 | Not started | - |
 
