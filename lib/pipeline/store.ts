@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { PipelineState, PipelineStage } from './types';
-import { extractViaServer } from '@/lib/api/extraction-server';
+import { extractViaWebSocket } from '@/lib/api/extraction-ws';
 import { saveThumbnail } from '@/lib/api/thumbnail';
 import { NewRecipe } from '@/lib/types';
 
@@ -23,9 +23,11 @@ export const usePipelineStore = create<PipelineStore>((set) => ({
     set({ ...initialState, sourceUrl: url, stage: 'downloading' });
 
     try {
-      // Server handles everything: cobalt + download + ffmpeg + whisper + Claude
-      const { title, ingredients, steps, thumbnail } = await extractViaServer(url);
-      set({ stage: 'structuring', progress: 0.9 });
+      const { title, ingredients, steps, thumbnail } =
+        await extractViaWebSocket(
+          url,
+          (stage, progress) => set({ stage: stage as PipelineStage, progress }),
+        );
 
       // Save thumbnail locally
       const thumbnailUri = await saveThumbnail(thumbnail);

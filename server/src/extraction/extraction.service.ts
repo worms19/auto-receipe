@@ -16,10 +16,15 @@ export class ExtractionService {
     private readonly claude: ClaudeService,
   ) {}
 
-  async extract(url: string, language?: string): Promise<ExtractResponseDto> {
+  async extract(
+    url: string,
+    language?: string,
+    onProgress?: (stage: string, progress: number) => void,
+  ): Promise<ExtractResponseDto> {
     this.logger.log(`Starting extraction for: ${url}`);
 
     // 1. Resolve Instagram URL to direct video URL via Cobalt
+    onProgress?.('downloading', 0.1);
     const videoUrl = await this.cobalt.getVideoUrl(url);
 
     // Temp file paths
@@ -29,18 +34,22 @@ export class ExtractionService {
 
     try {
       // 2. Download the video
+      onProgress?.('downloading', 0.2);
       await this.media.download(videoUrl, videoPath);
 
       // 3. Extract audio and thumbnail in parallel
+      onProgress?.('extracting', 0.4);
       await Promise.all([
         this.media.extractAudio(videoPath, audioPath),
         this.media.extractThumbnail(videoPath, thumbPath),
       ]);
 
       // 4. Transcribe audio
+      onProgress?.('transcribing', 0.6);
       const transcript = await this.whisper.transcribe(audioPath, language ?? 'fr');
 
       // 5. Structure recipe with Claude
+      onProgress?.('structuring', 0.8);
       const recipe = await this.claude.structureRecipe(transcript);
 
       // 6. Read thumbnail as base64

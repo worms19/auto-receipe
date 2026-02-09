@@ -1,6 +1,6 @@
 import { Modal, View, Text, Pressable } from 'react-native';
 import { usePipelineStore } from '@/lib/pipeline/store';
-import { STAGE_LABELS, STAGE_PROGRESS } from '@/lib/pipeline/types';
+import { STAGE_LABELS } from '@/lib/pipeline/types';
 import { ProgressIndicator } from './ProgressIndicator';
 
 interface ProcessingModalProps {
@@ -14,9 +14,8 @@ export function ProcessingModal({
   onClose,
   onRecipeSaved,
 }: ProcessingModalProps) {
-  const { stage, error, reset } = usePipelineStore();
+  const { stage, progress, error, reset } = usePipelineStore();
 
-  const progress = STAGE_PROGRESS[stage];
   const label = STAGE_LABELS[stage];
 
   const isComplete = stage === 'complete';
